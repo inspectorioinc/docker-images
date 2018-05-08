@@ -27,6 +27,7 @@ COPY redis-sentinel.conf /etc/redis/sentinel.conf
 COPY label-updater.sh /usr/local/bin/label-updater.sh
 COPY redis-launcher.sh /usr/local/bin/redis-launcher.sh
 COPY promote.sh /usr/local/bin/promote.sh
+COPY refresh-sentinel.sh /usr/local/bin/refresh-sentinel.sh
 
 CMD [ "touch /var/log/redis/runner.txt; chmod +w /var/log/redis/runner.txt; chmod +x /usr/local/bin/redis-launcher.sh" ]
 CMD [ "/usr/local/bin/redis-launcher.sh | tee /var/log/redis/runner.txt" ]
